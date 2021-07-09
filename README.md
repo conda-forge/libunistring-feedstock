@@ -3,7 +3,7 @@ About libunistring
 
 Home: https://www.gnu.org/software/libunistring
 
-Package license: LGPL
+Package license: GPL-3.0-only OR LGPL-3.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libunistring-feedstock/blob/master/LICENSE.txt)
 
