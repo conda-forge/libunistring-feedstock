@@ -21,7 +21,10 @@ requirements:
     - gnuconfig  # [unix]
     - {{ compiler('c') }}
     - make
+    - llvm-openmp  # [osx]
+    - libgomp      # [linux]
   host:
+  run:
 
 test:
   commands:
