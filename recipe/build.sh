@@ -12,3 +12,6 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
   fi
 fi
 make install
+
+# delete static library
+rm $PREFIX/lib/libunistring.a
