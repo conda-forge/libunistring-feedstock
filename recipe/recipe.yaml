@@ -8,9 +8,8 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://ftpmirror.gnu.org/libunistring/libunistring-${{ version }}.tar.xz
+  url: https://ftp.gnu.org/gnu/libunistring/libunistring-${{ version }}.tar.xz
   sha256: eb8fb2c3e4b6e2d336608377050892b54c3c983b646c561836550863003c05d7
-  file_name: libunistring-${{ version }}.tar.xz
 
 build:
   number: 0
@@ -27,13 +26,9 @@ requirements:
     - ${{ pin_subpackage('libunistring', lower_bound='x', upper_bound='x') }}
 
 tests:
-  - script:
-      - if: linux
-        then: test -e $PREFIX/lib/libunistring.so
-      - if: osx
-        then: test -e $PREFIX/lib/libunistring.a
-      - if: osx
-        then: test -e $PREFIX/lib/libunistring.dylib
+  - package_contents:
+      lib:
+        - unistring
 
 about:
   license: GPL-3.0-only OR LGPL-3.0-only
