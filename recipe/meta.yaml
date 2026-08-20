@@ -6,7 +6,7 @@ package:
 
 source:
   fn: libunistring-{{ version }}.tar.xz
-  url: http://ftpmirror.gnu.org/libunistring/libunistring-{{ version }}.tar.xz
+  url: https://ftp.fu-berlin.de/unix/gnu/libunistring/libunistring-{{ version }}.tar.xz
   sha256: eb8fb2c3e4b6e2d336608377050892b54c3c983b646c561836550863003c05d7
 
 build:
@@ -19,9 +19,11 @@ build:
 requirements:
   build:
     - gnuconfig  # [unix]
+    - {{ stdlib("c") }}
     - {{ compiler('c') }}
     - make
   host:
+    - libiconv  # [osx]
 
 test:
   commands:
