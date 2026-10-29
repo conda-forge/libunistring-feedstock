@@ -1,4 +1,4 @@
-{% set version = "0.9.10" %}
+{% set version = "1.5" %}
 
 package:
   name: libunistring
@@ -7,11 +7,11 @@ package:
 source:
   fn: libunistring-{{ version }}.tar.xz
   url: http://ftpmirror.gnu.org/libunistring/libunistring-{{ version }}.tar.xz
-  sha256: eb8fb2c3e4b6e2d336608377050892b54c3c983b646c561836550863003c05d7
+  sha256: fe89007a8a414ae4790b816b86859e877d3ab135db3c37f06541ff7e85ac344b
 
 build:
   number: 0
-  skip: True  # [win]
+  skip: true  # [win]
   run_exports:
     # https://abi-laboratory.pro/?view=timeline&l=libunistring
     - {{ pin_subpackage('libunistring', min_pin='x', max_pin='x') }}
@@ -20,6 +20,7 @@ requirements:
   build:
     - gnuconfig  # [unix]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - make
   host:
 
